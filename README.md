@@ -46,6 +46,12 @@ El programa utiliza herencia, interfaces y polimorfismo para gestionar diferente
 └── README.md
 ```
 
+## Interfaz gráfica
+
+Se implementó una interfaz gráfica utilizando Java Swing, que permite utilizar las funcionalidades del sistema mediante una ventana con botones, cuadros de diálogo y un área de resultados.
+
+La interfaz reutiliza el controlador y la lógica del modelo, sin modificar las clases originales del sistema.
+
 ## Compilación y ejecución
 
 **Compilar:**
@@ -62,13 +68,12 @@ java -cp bin Main
 
 ## Diseño
 
-El programa aplica el patrón Modelo-Vista-Controlador (MVC).
+El programa utiliza una clase abstracta IntegracionAPI y las interfaces Transaccional, Documentable y Auditable para representar diferentes capacidades.
 
-- **Modelo:** Clases de integración, interfaces y `SistemaIntegraciones`.
-- **Vista:** `VistaConsola`, encargada de leer entradas y preparar información.
-- **Controlador:** `ControladorIntegraciones`, encargado de coordinar las operaciones.
-- **Main:** Punto de entrada que administra el menú y presenta los resultados.
+SistemaIntegraciones administra los objetos mediante una única colección ArrayList<IntegracionAPI>.
 
-Las conexiones, transacciones y documentos son simulados. No se realizan solicitudes a servicios externos reales.
+El controlador coordina las operaciones entre el modelo y las vistas, permitiendo utilizar tanto la versión de consola como la interfaz gráfica.
+
+Nota: Todas las conexiones, operaciones financieras y generaciones de documentos son simuladas. No se realizan conexiones reales con APIs externas.
 
 El análisis de clases y el diagrama UML se encuentran en la carpeta `docs/`.
