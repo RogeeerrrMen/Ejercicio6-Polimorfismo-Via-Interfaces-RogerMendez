@@ -34,7 +34,7 @@ public class PasarelaTarjeta extends IntegracionAPI implements Transaccional, Au
     @Override
     public boolean procesarCobro(double monto) {
 
-        if (!estaConectado() || monto <= 0 || Double.isNaN(monto) || Double.isInfinite(monto)) {
+        if (!estaConectado() || monto <= 0) {
 
             return false;
         }
@@ -45,7 +45,7 @@ public class PasarelaTarjeta extends IntegracionAPI implements Transaccional, Au
     @Override
     public boolean procesarReintegro(double monto) {
 
-        if (!estaConectado() || monto <= 0 || Double.isNaN(monto) || Double.isInfinite(monto)) {
+        if (!estaConectado() || monto <= 0) {
 
             return false;
         }
